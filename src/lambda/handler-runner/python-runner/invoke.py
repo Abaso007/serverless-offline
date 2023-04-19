@@ -32,7 +32,7 @@ class FakeLambdaContext(object):
 
     @property
     def invoked_function_arn(self):
-        return 'arn:aws:lambda:serverless:' + self.name
+        return f'arn:aws:lambda:serverless:{self.name}'
 
     @property
     def memory_limit_in_mb(self):
@@ -44,7 +44,7 @@ class FakeLambdaContext(object):
 
     @property
     def log_group_name(self):
-        return '/aws/lambda/' + self.name
+        return f'/aws/lambda/{self.name}'
 
     @property
     def log_stream_name(self):
